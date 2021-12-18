@@ -25,6 +25,7 @@ echo "######################"
 echo ""
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+chsh -s /bin/zsh
 
 sudo git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 sudo git clone https://github.com/djui/alias-tips.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/alias-tips
@@ -50,3 +51,5 @@ cd ~/.dotfiles-local
 git switch -c "$(hostname)"
 ~/.dotfiles-local/install
 cd $STARTING_FOLDER
+
+
