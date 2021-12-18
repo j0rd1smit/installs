@@ -2,20 +2,7 @@
 
 STARTING_FOLDER="$(pwd)"
 
-echo ""
-echo "#######################"
-echo "# Setting up dotfiles #"
-echo "#######################"
-echo ""
 
-git clone https://github.com/j0rd1smit/dotfiles.git ~/.dotfiles
-~/.dotfiles/install
-
-echo ""
-echo "#############################"
-echo "# Setting up dotfiles-local #"
-echo "#############################"
-echo ""
 
 git clone https://github.com/j0rd1smit/dotfiles-local.git ~/.dotfiles-local
 cd ~/.dotfiles-local
@@ -51,3 +38,18 @@ sudo git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/
 sudo git clone https://github.com/djui/alias-tips.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/alias-tips
 sudo git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 sudo git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+
+echo ""
+echo "#######################"
+echo "# Setting up dotfiles #"
+echo "#######################"
+echo ""
+
+git clone https://github.com/j0rd1smit/dotfiles.git ~/.dotfiles
+~/.dotfiles/install
+
+echo ""
+echo "#############################"
+echo "# Setting up dotfiles-local #"
+echo "#############################"
+echo ""
