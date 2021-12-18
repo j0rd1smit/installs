@@ -2,14 +2,32 @@
 
 STARTING_FOLDER="$(pwd)"
 
+echo ""
+echo "#######################"
+echo "# Setting up dotfiles #"
+echo "#######################"
+echo ""
+
 git clone https://github.com/j0rd1smit/dotfiles.git ~/.dotfiles
 ~/.dotfiles/install
+
+echo ""
+echo "#############################"
+echo "# Setting up dotfiles-local #"
+echo "#############################"
+echo ""
 
 git clone https://github.com/j0rd1smit/dotfiles-local.git ~/.dotfiles-local
 cd ~/.dotfiles-local
 git switch -c "$(hostname)"
 ~/.dotfiles-local/install
-cd STARTING_FOLDER
+cd $STARTING_FOLDER
+
+echo ""
+echo "######################"
+echo "# Setting up ohmyzsh #"
+echo "######################"
+echo ""
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
