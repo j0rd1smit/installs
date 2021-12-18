@@ -21,7 +21,23 @@ git clone https://github.com/j0rd1smit/dotfiles-local.git ~/.dotfiles-local
 cd ~/.dotfiles-local
 git switch -c "$(hostname)"
 ~/.dotfiles-local/install
-cd $STARTING_FOLDER
+cd $GSTARTING_FOLDER
+
+echo ""
+echo "##################"
+echo "# Installing zsh #"
+echo "##################"
+echo ""
+
+if [[ "$(uname)" == "Linux" ]]; 
+then {
+	(command -v zsh > /dev/null;) || (sudo apt-get update && sudo apt-get install zsh)
+};
+elif [[ "$(uname)" == "Darwin" ]]
+then {
+	(command -v zsh > /dev/null;) || brew install zsh
+}
+fi
 
 echo ""
 echo "######################"
